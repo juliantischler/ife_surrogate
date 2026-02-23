@@ -1,0 +1,17 @@
+## rebuild
+sphinx-build -E -a docs/ docs/_build/html
+
+## view on local server:
+cd docs/_build/html
+python -m http.server 8000
+
+
+## live view:
+http://127.0.0.1:8000/
+
+
+
+## GOTCHAS
+##  [!!] ctrl + shift + r on chrome to reload
+##  [!] delete _build folder
+##  [!] pip installed library, not local

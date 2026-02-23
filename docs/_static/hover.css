@@ -1,0 +1,29 @@
+.sidebar-tree .reference {
+    background-color: #f2f2f2;
+    color: #000000 !important; /* Force text white */
+    
+    /* Optional: styling to look more like buttons */
+    display: block;
+    padding: 0.4rem 0.8rem; /* Adjust padding as needed */
+}
+
+/* Ensure the brand text (Title) stays dark since it is NOT in a button */
+.sidebar-brand-text {
+    color: #101010 !important;
+}
+.sidebar-drawer {
+    /* Change 1px to your desired thickness */
+    border-right-width: 1px !important;
+    border-right-color: #eeebee !important; /* Color */
+}
+.sidebar-tree .caption {
+    background-color: #878787; /* Your desired background */
+    color: #f2f2f2;            /* Text color */
+    
+    /* Formatting to look like a header bar */
+    padding: 0.4rem 0.8rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.0rem;
+    font-weight: bold;
+    text-transform: uppercase; /* Optional: makes it look more distinct */
+}

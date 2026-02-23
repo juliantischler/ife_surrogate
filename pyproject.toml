@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "IFE_Surrogate"
+version = "0.2.2"
+description = "A machine learning library intended for surrogate modeling tasks."
+readme = "README.md"
+requires-python = ">=3.9, <3.13"
+authors = [
+    {name = "Tobias Leitgeb"},
+    {name = "Julian Tischler"}
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "numpy",
+    "flax",
+    "jax",
+    "numpyro",
+    "optax",
+    "matplotlib",
+    "pyswarms",
+    "scipy",
+    "tqdm",
+    "jaxtyping",
+    "seaborn",
+    "joblib",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-dir]
+"" = "src"

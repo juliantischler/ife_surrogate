@@ -1,0 +1,74 @@
+/* _static/custom.css */
+:root {
+  /* -- Colors -- */
+  --color-brand-primary: #101010; /* Your accent red */
+  
+  /* Link Colors (Content) */
+  --color-link-blue: #0056b3;
+  --color-brand-content: var(--color-link-blue);
+  
+  /* -- Sidebar Specifics -- */
+  /* 1. Force Sidebar Background to Black */
+  --color-sidebar-background: #101010;
+  --color-sidebar-background-border: #eeeeee;
+  
+  /* 2. Sidebar Text Colors */
+  --color-sidebar-item-text: #ffffff;
+  --color-sidebar-item-text--hover: #101010; /* Red on hover */
+  --color-sidebar-search-background: #cccccc;
+}
+
+/* -- Dark Mode -- */
+body[data-theme="dark"] {
+  --color-link-blue: #58a6ff;
+  --color-brand-content: var(--color-link-blue);
+  
+  /* Keep sidebar dark in dark mode, or force white if you really want? 
+     Standard is dark background. */
+  --color-sidebar-background: #0a0a0a;
+  --color-sidebar-item-text: #cccccc;
+  --color-sidebar-item-text--hover: #ff4d79; /* Lighter red for contrast */
+}
+
+/* =========================================
+   SIDEBAR OVERRIDES
+   ========================================= */
+
+/* 1. Logo Area - Ensure it matches the white sidebar */
+.sidebar-brand {
+    background-color: var(--color-sidebar-background) !important;
+}
+.sidebar-brand-text {
+    color: #101010 !important;
+}
+
+/* 2. Sidebar Link Styling */
+/* Default state: Dark Grey/Black */
+.sidebar-tree .reference {
+    color: var(--color-sidebar-item-text);
+    transition: color 0.1s ease;
+}
+
+/* Hover state: Accent Red */
+.sidebar-tree .reference:hover {
+    color: var(--color-sidebar-item-text--hover) !important;
+    background-color: transparent; /* Remove default grey block if desired */
+}
+
+/* Active/Current Page state: Accent Red + Bold */
+.sidebar-tree .reference.current {
+    color: var(--color-brand-primary) !important;
+    font-weight: 600;
+}
+
+/* 3. Link Color Fixes (From previous request) */
+.content a.reference.internal,
+.content a.reference.external {
+    color: var(--color-link-blue) !important;
+}
+.content a.reference.internal:hover,
+.content a.reference.external:hover {
+    color: #004494 !important; /* Darker blue on hover */
+    text-decoration: underline;
+}
+
