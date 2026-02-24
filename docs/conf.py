@@ -11,7 +11,7 @@ release = '0.2.2'
 extensions = [
     'sphinx.ext.autodoc',           # auto-document Python code
     'sphinx.ext.napoleon',          # support NumPy/Google style docstrings
-    'sphinx_autodoc_typehints',     # type hints in docs
+    # 'sphinx_autodoc_typehints',     # type hints in docs
     'sphinx.ext.mathjax',           # LaTeX math rendering in HTML
     'myst_parser',                  # Markdown support (optional)
     'nbsphinx',                     # Notebook
