@@ -20,7 +20,7 @@ Depending on the complexity of the loss landscape, one can choose from various t
 * **OptaxTrainer**: Leverages the ``optax`` library for gradient-based optimization. Ideal for high-dimensional parameter spaces where Adam, SGD, or multi-stage learning rate schedules are required.
 * **SwarmTrainer**: A global optimization approach using Particle Swarm Optimization (PSO). This is particularly useful for non-convex likelihood surfaces where gradient descent might get stuck in local minima.
 
-Each trainer exposes specific hyperparameters—such as swarm size, inertia weights, or optimizer strategies—allowing for fine-grained control over the convergence behavior.
+Each trainer exposes specific hyperparameters (such as swarm size, inertia weights, or optimizer strategies) allowing for fine-grained control over the convergence behavior.
   
 
 .. note::
