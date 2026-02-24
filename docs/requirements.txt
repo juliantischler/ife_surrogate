@@ -1,12 +1,11 @@
 # --- Sphinx Core & Theme ---
-Sphinx==8.2.3
+Sphinx==8.1.3
 furo==2025.9.25
 sphinx-rtd-theme==3.0.2
 
 # --- Sphinx Extensions (found in your list) ---
 nbsphinx==0.9.8
 myst-parser==4.0.1
-sphinx-autodoc-typehints==3.0.1
 sphinx-design==0.6.1
 sphinxcontrib-jquery==4.1
 
