@@ -1,0 +1,26 @@
+# --- Sphinx Core & Theme ---
+Sphinx==8.2.3
+furo==2025.9.25
+sphinx-rtd-theme==3.0.2
+
+# --- Sphinx Extensions (found in your list) ---
+nbsphinx==0.9.8
+myst-parser==4.0.1
+sphinx-autodoc-typehints==3.6.0
+sphinx-design==0.6.1
+sphinxcontrib-jquery==4.1
+
+# --- Core Dependencies (for autodoc to work) ---
+numpy==2.2.6
+pandas==2.2.3
+matplotlib==3.10.3
+scipy==1.15.3
+scikit-learn==1.6.1
+pydantic==2.11.7
+jax==0.6.1
+jaxlib==0.6.1
+
+# --- Other Essential Tools ---
+ipython==9.2.0
+nbconvert==7.16.6
+jinja2==3.1.6

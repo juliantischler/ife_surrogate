@@ -3,10 +3,10 @@ Getting Started
 
 Import the package specific classes and some helper packages for brevity.  
 
-**matplotlib** for plotting.
-**jax.random** to set the key (this is not required but highly encouraged).  
-**numpyro.distributions** to initialise our priors (just for clarity)  
-**jax.numpy** to initialise our kernel parametes (just for clarity)  
+**matplotlib** for plotting.  
+**jax.random** to set the key (this is not required but highly encouraged).    
+**numpyro.distributions** to initialise our priors (just for clarity)    
+**jax.numpy** to initialise our kernel parametes (just for clarity)    
 
 .. code-block:: python
 
@@ -43,9 +43,13 @@ Next we generate some dummy data:
 
 .. image:: ../_static/getting_started01.png
 
+We suggest a 3-Step-Workflow:
 
-To initialise the kernel requires defining the **priors** and additionally the initial parameters. (This will likely be made easier in future versions.)
-Here we use a Kriging Kernel, which uses a "lengthscale" and a "power" parameter.
+1. **Kernel**
+
+The Kernel defines the spatial link between the data.
+To initialise the kernel requires defining the **priors** and the initial parameters. (This will likely be made easier in future versions.)
+Here we use a Kriging Kernel, which uses a "lengthscale" and a "power" hyperparameter.
 
 .. code-block:: python
 
@@ -53,15 +57,30 @@ Here we use a Kriging Kernel, which uses a "lengthscale" and a "power" parameter
 	priors = {"lengthscale" : Uniform(0, 1), "power" : LogUniform(0, 1)}
 	kernel = Kriging(lengthscale=jnp.ones(d), power=jnp.ones(d), priors=priors)
 
-After instantiating the model we need to train it. We provide two trainers, OptaxTrainer and SwarmTrainer. Both have a variety of settings, which are explored in the Guide to Trainers page. (briefly: OptaxTrainer is really fast, but sometimes fails to yield a result, Swarmtrainer is slower but always converges) 
+2. **Model**
+
+The Model holds the objective function, which is already implemented. It only needs the training data and the kernel.
 
 .. code-block:: python
 
 	model = WidebandGP(x_train, y_train, kernel)
 
+3. **Trainer**
+
+After instantiating the model we need to train it. 
+We provide two trainers, OptaxTrainer and SwarmTrainer. Both have a variety of settings, which are explored in :doc:`trainer_guide` and in more detail in :doc:`/api/gp/trainers`. (tldr; OptaxTrainer is really fast, but sometimes fails to yield a result, Swarmtrainer is slower but always converges) 
+
+.. code-block:: python
+
 	trainer = SwarmTrainer()
 
 	best_run, history = trainer.train(model)
+
+
+Afterwards you can use the model to predict on new data:
+
+.. code-block:: python
+
 	predictions, variances = model.predict(x_test)
 
 	plt.scatter(x_train, y_train, label="train", c="k")
@@ -70,5 +89,6 @@ After instantiating the model we need to train it. We provide two trainers, Opta
 	plt.grid()
 	plt.legend()
 	plt.show()
+
 
 .. image:: ../_static/getting_started02.png
