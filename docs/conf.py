@@ -23,7 +23,7 @@ extensions = [
 # Templates
 templates_path = ['_templates']
 exclude_patterns = []
-
+autodoc_typehints = "description"
 # HTML output
 html_theme = 'furo'
 html_static_path = ['_static']
